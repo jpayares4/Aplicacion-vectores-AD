@@ -6,6 +6,8 @@
 
 package aplicacionvectores;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jpayares4
@@ -15,6 +17,7 @@ public class principal extends javax.swing.JFrame {
     /**
      * Creates new form principal
      */
+    double v[];
     public principal() {
         initComponents();
     }
@@ -28,21 +31,231 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        txtLongitud = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        cmbcrear = new javax.swing.JButton();
+        cmbLlenarManual = new javax.swing.JButton();
+        cmbLlenarAutomatico = new javax.swing.JButton();
+        cmbMostrar = new javax.swing.JButton();
+        cmbBorrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtResultado = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(0, 255, 0));
+        jPanel1.setToolTipText("");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Blackadder ITC", 0, 24)); // NOI18N
+        jLabel1.setText("Manejo de vectores");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 170, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos iniciales", 0, 0, new java.awt.Font("Blackadder ITC", 0, 18))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Blackadder ITC", 0, 18)); // NOI18N
+        jLabel2.setText("Longitud :");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 80, 20));
+
+        txtLongitud.setBackground(new java.awt.Color(204, 255, 255));
+        txtLongitud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLongitudActionPerformed(evt);
+            }
+        });
+        txtLongitud.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLongitudKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 90, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 190, 100));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Operaciones", 0, 0, new java.awt.Font("Blackadder ITC", 0, 18))); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cmbcrear.setBackground(new java.awt.Color(204, 255, 255));
+        cmbcrear.setFont(new java.awt.Font("Blackadder ITC", 0, 18)); // NOI18N
+        cmbcrear.setText("Crear");
+        cmbcrear.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cmbcrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbcrearActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbcrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 120, -1));
+
+        cmbLlenarManual.setBackground(new java.awt.Color(204, 255, 255));
+        cmbLlenarManual.setFont(new java.awt.Font("Blackadder ITC", 0, 14)); // NOI18N
+        cmbLlenarManual.setText("Llenar Manual");
+        cmbLlenarManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLlenarManualActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbLlenarManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 120, -1));
+
+        cmbLlenarAutomatico.setBackground(new java.awt.Color(204, 255, 255));
+        cmbLlenarAutomatico.setFont(new java.awt.Font("Blackadder ITC", 0, 14)); // NOI18N
+        cmbLlenarAutomatico.setText("Llenar Automatico");
+        cmbLlenarAutomatico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLlenarAutomaticoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbLlenarAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        cmbMostrar.setBackground(new java.awt.Color(204, 255, 255));
+        cmbMostrar.setFont(new java.awt.Font("Blackadder ITC", 0, 14)); // NOI18N
+        cmbMostrar.setText("Mostrar");
+        cmbMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMostrarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 120, -1));
+
+        cmbBorrar.setBackground(new java.awt.Color(204, 255, 255));
+        cmbBorrar.setFont(new java.awt.Font("Blackadder ITC", 0, 14)); // NOI18N
+        cmbBorrar.setText("Borrar");
+        cmbBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbBorrarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 120, -1));
+
+        jButton1.setFont(new java.awt.Font("Blackadder ITC", 0, 18)); // NOI18N
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 120, 30));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 140, 270));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultados", 0, 0, new java.awt.Font("Blackadder ITC", 0, 18))); // NOI18N
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtResultado.setBackground(new java.awt.Color(204, 255, 255));
+        txtResultado.setColumns(20);
+        txtResultado.setRows(5);
+        jScrollPane1.setViewportView(txtResultado);
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 160, 110));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 190, 150));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtLongitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLongitudActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLongitudActionPerformed
+
+    private void cmbcrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbcrearActionPerformed
+        // TODO add your handling code here:
+        int Longitud;
+        if(txtLongitud.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "digite la longitud ","Error",JOptionPane.ERROR_MESSAGE);
+            txtLongitud.requestFocusInWindow();
+            
+            
+        }
+        else if (Integer.parseInt(txtLongitud.getText().trim())==0){
+           JOptionPane.showMessageDialog(this, " la longitud no puede ser 0 ","Error",JOptionPane.ERROR_MESSAGE);
+           txtLongitud.requestFocusInWindow();
+            txtLongitud.selectAll();
+            
+        }
+        else{
+            Longitud=Integer.parseInt(txtLongitud.getText().trim() );
+            v= new double [Longitud];
+            JOptionPane.showMessageDialog(this, "Vector creado Exitosamente");
+            
+        }
+    }//GEN-LAST:event_cmbcrearActionPerformed
+
+    private void txtLongitudKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLongitudKeyTyped
+        // TODO add your handling code here:
+         char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();
+          }
+    }//GEN-LAST:event_txtLongitudKeyTyped
+
+    private void cmbMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMostrarActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < v.length; i++) {
+           txtResultado.append(v[i]+"\n ");
+           
+        }
+    }//GEN-LAST:event_cmbMostrarActionPerformed
+
+    private void cmbLlenarManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenarManualActionPerformed
+        // TODO add your handling code here:
+        double n;
+        for (int i = 0; i < v.length; i++) {
+            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite los elementos en la posicion"+i));
+            v[i]=n;
+            
+        }
+    }//GEN-LAST:event_cmbLlenarManualActionPerformed
+
+    private void cmbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBorrarActionPerformed
+        // TODO add your handling code here:
+        txtLongitud.setText("");
+        txtResultado.setText("");
+        v = null;
+         txtLongitud.requestFocusInWindow();
+    }//GEN-LAST:event_cmbBorrarActionPerformed
+
+    private void cmbLlenarAutomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenarAutomaticoActionPerformed
+        // TODO add your handling code here:
+        double n;
+        for (int i = 0; i < v.length; i++) {
+            n= (int)(Math.random()*50 + 1);
+            v[i]=n;
+        }
+        JOptionPane.showMessageDialog(this,"Vector Llenado Correctamente");
+    }//GEN-LAST:event_cmbLlenarAutomaticoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +293,20 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmbBorrar;
+    private javax.swing.JButton cmbLlenarAutomatico;
+    private javax.swing.JButton cmbLlenarManual;
+    private javax.swing.JButton cmbMostrar;
+    private javax.swing.JButton cmbcrear;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtLongitud;
+    private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
 }
