@@ -248,9 +248,10 @@ public class principal extends javax.swing.JFrame {
     private void cmbLlenarManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenarManualActionPerformed
         // TODO add your handling code here:
         double n;
-       
+       boolean aux=true;
         for (int i = 0; i < v.length; i++) {
              int sw,res;
+             
              do{
                     sw=1;
             try{
@@ -267,6 +268,10 @@ public class principal extends javax.swing.JFrame {
              if (res==0){
                  sw=1;
                  i=v.length;
+                 aux=false;
+             }else{
+                 sw=0;
+                 
              }
             }
             }while(sw==0);
@@ -277,7 +282,7 @@ public class principal extends javax.swing.JFrame {
           cmbcrear.setEnabled(false);
         cmbLlenarManual.setEnabled(false);
         cmbLlenarAutomatico.setEnabled(false);
-        cmbMostrar.setEnabled(true);
+        cmbMostrar.setEnabled(aux);
         cmbBorrar.setEnabled(true);
         cmbSalir.setEnabled(true);
         
