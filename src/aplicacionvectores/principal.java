@@ -250,7 +250,7 @@ public class principal extends javax.swing.JFrame {
         double n;
        
         for (int i = 0; i < v.length; i++) {
-             int sw;
+             int sw,res;
              do{
                     sw=1;
             try{
@@ -263,8 +263,11 @@ public class principal extends javax.swing.JFrame {
         }
             catch (NullPointerException e){
                     
-              JOptionPane.showMessageDialog(this,"Digite un numero valido");
-              sw=0;
+             res= JOptionPane.showConfirmDialog(this,"¿Seguro que desea salir?","Salir",JOptionPane.YES_NO_OPTION);
+             if (res==0){
+                 sw=1;
+                 i=v.length;
+             }
             }
             }while(sw==0);
             
