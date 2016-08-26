@@ -248,10 +248,28 @@ public class principal extends javax.swing.JFrame {
     private void cmbLlenarManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenarManualActionPerformed
         // TODO add your handling code here:
         double n;
+       
         for (int i = 0; i < v.length; i++) {
+             int sw;
+             do{
+                    sw=1;
+            try{
             n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite los elementos en la posicion"+i));
             v[i]=n;
+            }catch(NumberFormatException e){
+                
+            JOptionPane.showMessageDialog(this,"Digite un numero valido");
+               sw=0;
+        }
+            catch (NullPointerException e){
+                    
+              JOptionPane.showMessageDialog(this,"Digite un numero valido");
+              sw=0;
+            }
+            }while(sw==0);
             
+        
+        
         }
           cmbcrear.setEnabled(false);
         cmbLlenarManual.setEnabled(false);
@@ -259,6 +277,7 @@ public class principal extends javax.swing.JFrame {
         cmbMostrar.setEnabled(true);
         cmbBorrar.setEnabled(true);
         cmbSalir.setEnabled(true);
+        
     }//GEN-LAST:event_cmbLlenarManualActionPerformed
 
     private void cmbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBorrarActionPerformed
