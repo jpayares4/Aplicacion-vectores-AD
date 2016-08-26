@@ -20,6 +20,13 @@ public class principal extends javax.swing.JFrame {
     double v[];
     public principal() {
         initComponents();
+        cmbcrear.setEnabled(true);
+        cmbLlenarManual.setEnabled(false);
+        cmbLlenarAutomatico.setEnabled(false);
+        cmbMostrar.setEnabled(false);
+        cmbBorrar.setEnabled(true);
+        cmbSalir.setEnabled(true);
+        
     }
 
     /**
@@ -42,7 +49,7 @@ public class principal extends javax.swing.JFrame {
         cmbLlenarAutomatico = new javax.swing.JButton();
         cmbMostrar = new javax.swing.JButton();
         cmbBorrar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        cmbSalir = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
@@ -137,15 +144,15 @@ public class principal extends javax.swing.JFrame {
         });
         jPanel3.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 120, -1));
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 255));
-        jButton1.setFont(new java.awt.Font("Blackadder ITC", 0, 18)); // NOI18N
-        jButton1.setText("Salir");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cmbSalir.setBackground(new java.awt.Color(204, 255, 255));
+        cmbSalir.setFont(new java.awt.Font("Blackadder ITC", 0, 18)); // NOI18N
+        cmbSalir.setText("Salir");
+        cmbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cmbSalirActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 120, 30));
+        jPanel3.add(cmbSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 120, 30));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 140, 270));
 
@@ -166,7 +173,7 @@ public class principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +182,8 @@ public class principal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(386, 374));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtLongitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLongitudActionPerformed
@@ -201,7 +209,13 @@ public class principal extends javax.swing.JFrame {
             Longitud=Integer.parseInt(txtLongitud.getText().trim() );
             v= new double [Longitud];
             JOptionPane.showMessageDialog(this, "Vector creado Exitosamente");
-            
+            cmbcrear.setEnabled(false);
+        cmbLlenarManual.setEnabled(true);
+        cmbLlenarAutomatico.setEnabled(true);
+        cmbMostrar.setEnabled(false);
+        cmbBorrar.setEnabled(false);
+        cmbSalir.setEnabled(true);
+        txtLongitud.setEnabled(false);
         }
     }//GEN-LAST:event_cmbcrearActionPerformed
 
@@ -223,6 +237,12 @@ public class principal extends javax.swing.JFrame {
            txtResultado.append(v[i]+"\n ");
            
         }
+        cmbcrear.setEnabled(false);
+        cmbLlenarManual.setEnabled(false);
+        cmbLlenarAutomatico.setEnabled(false);
+        cmbMostrar.setEnabled(true);
+        cmbBorrar.setEnabled(true);
+        cmbSalir.setEnabled(true);
     }//GEN-LAST:event_cmbMostrarActionPerformed
 
     private void cmbLlenarManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenarManualActionPerformed
@@ -233,6 +253,12 @@ public class principal extends javax.swing.JFrame {
             v[i]=n;
             
         }
+          cmbcrear.setEnabled(false);
+        cmbLlenarManual.setEnabled(false);
+        cmbLlenarAutomatico.setEnabled(false);
+        cmbMostrar.setEnabled(true);
+        cmbBorrar.setEnabled(true);
+        cmbSalir.setEnabled(true);
     }//GEN-LAST:event_cmbLlenarManualActionPerformed
 
     private void cmbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBorrarActionPerformed
@@ -241,6 +267,13 @@ public class principal extends javax.swing.JFrame {
         txtResultado.setText("");
         v = null;
          txtLongitud.requestFocusInWindow();
+           cmbcrear.setEnabled(true);
+        cmbLlenarManual.setEnabled(false);
+        cmbLlenarAutomatico.setEnabled(false);
+        cmbMostrar.setEnabled(false);
+        cmbBorrar.setEnabled(true);
+        cmbSalir.setEnabled(true);
+        txtLongitud.setEnabled(true);
     }//GEN-LAST:event_cmbBorrarActionPerformed
 
     private void cmbLlenarAutomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenarAutomaticoActionPerformed
@@ -253,10 +286,10 @@ public class principal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this,"Vector Llenado Correctamente");
     }//GEN-LAST:event_cmbLlenarAutomaticoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cmbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSalirActionPerformed
         // TODO add your handling code here:
          System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_cmbSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,8 +331,8 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton cmbLlenarAutomatico;
     private javax.swing.JButton cmbLlenarManual;
     private javax.swing.JButton cmbMostrar;
+    private javax.swing.JButton cmbSalir;
     private javax.swing.JButton cmbcrear;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
